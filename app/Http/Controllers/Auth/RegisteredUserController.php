@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Patient;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -57,6 +58,9 @@ class RegisteredUserController extends Controller
             'city' => $request->city,
             'date_of_birth' => $request->date_of_birth
         ]);
+        Patient::create([
+            'user_id' => $user->id,
+            ]);
 
         event(new Registered($user));
 
