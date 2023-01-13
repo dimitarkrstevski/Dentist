@@ -19,10 +19,10 @@ class UserSeeder extends Seeder
         DB::table('users')->delete();
         DB::table('users')->insert([
            [ 'id'=>1,
-               'name' => 'Doctor',
+               'name' => 'Admin',
                'surname' => 'Admin',
                'phone_number' => '070777777',
-               'email' => 'doctor@dentist.com',
+               'email' => 'admin@dentist.com',
                'password' => Hash::make('12345678'),
                'EMBG' => '1234567890123',
                'street' => 'UL. Ilindenska',
